@@ -6,7 +6,6 @@ import {
   FaStar,
   FaPhone,
   FaUserMd,
-  FaHospital,
   FaHeartbeat,
   FaAward,
   FaCheckCircle,
@@ -26,15 +25,17 @@ export default function Home() {
       {/* ===== HERO ===== */}
       <section
         id="inicio"
-        className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-teal-900 via-teal-800 to-teal-950 overflow-hidden"
+        className="relative min-h-screen flex items-center justify-center overflow-hidden"
       >
-        {/* Background pattern overlay */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute inset-0" style={{
-            backgroundImage: "radial-gradient(circle at 25% 25%, white 1px, transparent 1px), radial-gradient(circle at 75% 75%, white 1px, transparent 1px)",
-            backgroundSize: "50px 50px",
-          }} />
-        </div>
+        {/* Background image */}
+        <Image
+          src="/images/surgery/laparoscopic.png"
+          alt="Cirugía laparoscópica"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-teal-900/90 via-teal-800/85 to-teal-950/90" />
 
         <div className="relative z-10 max-w-6xl mx-auto px-4 py-32 text-center">
           <div className="mb-6 inline-flex items-center gap-2 bg-teal-700/50 text-teal-100 px-4 py-2 rounded-full text-sm">
@@ -169,10 +170,14 @@ export default function Home() {
                 href={`/servicios/${service.id}`}
                 className="group bg-white rounded-2xl shadow-md hover:shadow-xl transition-all overflow-hidden"
               >
-                <div className="relative h-56 overflow-hidden bg-teal-100">
-                  <div className="absolute inset-0 bg-gradient-to-br from-teal-600 to-teal-800 flex items-center justify-center">
-                    <FaHospital className="text-6xl text-white/30" />
-                  </div>
+                <div className="relative h-56 overflow-hidden">
+                  <Image
+                    src={service.image}
+                    alt={service.title}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
                 </div>
                 <div className="p-8">
                   <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-teal-700 transition-colors">
@@ -225,17 +230,37 @@ export default function Home() {
               </ul>
             </div>
             <div className="grid grid-cols-2 gap-4">
-              <div className="rounded-2xl overflow-hidden bg-teal-800/50 aspect-square flex items-center justify-center">
-                <FaHeartbeat className="text-6xl text-teal-400/50" />
+              <div className="relative rounded-2xl overflow-hidden aspect-square">
+                <Image
+                  src="/images/surgery/laparoscopic.png"
+                  alt="Cirugía laparoscópica en quirófano"
+                  fill
+                  className="object-cover"
+                />
               </div>
-              <div className="rounded-2xl overflow-hidden bg-teal-800/50 aspect-square flex items-center justify-center mt-8">
-                <FaAward className="text-6xl text-teal-400/50" />
+              <div className="relative rounded-2xl overflow-hidden aspect-square mt-8">
+                <Image
+                  src="/images/patients/patient-with-doctor-1.png"
+                  alt="Dr. Pilchik con paciente"
+                  fill
+                  className="object-cover"
+                />
               </div>
-              <div className="rounded-2xl overflow-hidden bg-teal-800/50 aspect-square flex items-center justify-center">
-                <FaUserMd className="text-6xl text-teal-400/50" />
+              <div className="relative rounded-2xl overflow-hidden aspect-square">
+                <Image
+                  src="/images/patients/patient-with-doctor-2.png"
+                  alt="Dr. Pilchik con paciente"
+                  fill
+                  className="object-cover"
+                />
               </div>
-              <div className="rounded-2xl overflow-hidden bg-teal-800/50 aspect-square flex items-center justify-center mt-8">
-                <FaHospital className="text-6xl text-teal-400/50" />
+              <div className="relative rounded-2xl overflow-hidden aspect-square mt-8">
+                <Image
+                  src="/images/patients/patient-with-doctor-4.png"
+                  alt="Dr. Pilchik con paciente"
+                  fill
+                  className="object-cover"
+                />
               </div>
             </div>
           </div>
@@ -247,11 +272,13 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="relative">
-              <div className="rounded-2xl overflow-hidden bg-teal-50 aspect-[4/5] flex items-center justify-center">
-                <div className="text-center p-8">
-                  <FaUserMd className="text-8xl text-teal-300 mx-auto mb-4" />
-                  <p className="text-teal-600 font-semibold">Dr. Walter Pilchik</p>
-                </div>
+              <div className="rounded-2xl overflow-hidden aspect-[4/5] relative">
+                <Image
+                  src="/images/doctor/conference.png"
+                  alt="Dr. Walter Pilchik en congreso médico"
+                  fill
+                  className="object-cover"
+                />
               </div>
               <div className="absolute -bottom-6 -right-6 bg-teal-600 text-white rounded-2xl p-6 shadow-lg hidden md:block">
                 <div className="text-3xl font-bold">+20</div>
@@ -310,6 +337,47 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ===== PATIENT GALLERY ===== */}
+      <section className="py-20 bg-white">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Nuestros Pacientes
+            </h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Cada imagen cuenta una historia de transformación, salud y una
+              nueva vida.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            {[
+              { src: "/images/patients/patient-with-doctor-1.png", alt: "Dr. Pilchik con paciente" },
+              { src: "/images/patients/result-1.png", alt: "Resultado de paciente" },
+              { src: "/images/patients/patient-with-doctor-2.png", alt: "Dr. Pilchik con paciente" },
+              { src: "/images/patients/result-3.png", alt: "Resultado de paciente" },
+              { src: "/images/patients/patient-with-doctor-3.png", alt: "Dr. Pilchik con paciente" },
+              { src: "/images/patients/result-2.png", alt: "Resultado de paciente" },
+              { src: "/images/patients/patient-pre-surgery.png", alt: "Paciente pre-cirugía" },
+              { src: "/images/patients/patient-with-doctor-4.png", alt: "Dr. Pilchik con paciente" },
+            ].map((img, idx) => (
+              <div
+                key={idx}
+                className="relative aspect-[3/4] rounded-2xl overflow-hidden group"
+              >
+                <Image
+                  src={img.src}
+                  alt={img.alt}
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ===== TESTIMONIALS ===== */}
       <section id="testimonios" className="py-20 bg-gray-50">
         <div className="max-w-6xl mx-auto px-4">
@@ -338,9 +406,20 @@ export default function Home() {
                   &ldquo;{testimonial.quote}&rdquo;
                 </p>
                 <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-full bg-teal-100 flex items-center justify-center text-teal-700 font-bold text-lg">
-                    {testimonial.name[0]}
-                  </div>
+                  {testimonial.image ? (
+                    <div className="relative w-12 h-12 rounded-full overflow-hidden flex-shrink-0">
+                      <Image
+                        src={testimonial.image}
+                        alt={testimonial.name}
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+                  ) : (
+                    <div className="w-12 h-12 rounded-full bg-teal-100 flex items-center justify-center text-teal-700 font-bold text-lg flex-shrink-0">
+                      {testimonial.name[0]}
+                    </div>
+                  )}
                   <div>
                     <div className="font-semibold text-gray-900">
                       {testimonial.name}
@@ -454,8 +533,15 @@ export default function Home() {
       </section>
 
       {/* ===== CTA ===== */}
-      <section className="py-20 bg-gradient-to-r from-teal-700 to-teal-900 text-white text-center">
-        <div className="max-w-3xl mx-auto px-4">
+      <section className="relative py-20 text-white text-center overflow-hidden">
+        <Image
+          src="/images/patients/patient-with-doctor-3.png"
+          alt="Dr. Pilchik con paciente"
+          fill
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-teal-800/90 to-teal-900/90" />
+        <div className="relative z-10 max-w-3xl mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             Dá el primer paso hacia una vida más saludable
           </h2>

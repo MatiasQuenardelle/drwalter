@@ -1,12 +1,12 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import { Metadata } from "next";
 import {
   FaWhatsapp,
   FaCheckCircle,
   FaArrowLeft,
   FaPhone,
-  FaHospital,
 } from "react-icons/fa";
 import { services } from "@/data/services";
 import { siteConfig } from "@/data/siteConfig";
@@ -57,9 +57,16 @@ export default async function ServicePage({ params }: PageProps) {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
           {/* Main content */}
           <div className="lg:col-span-2">
-            {/* Hero image placeholder */}
-            <div className="rounded-2xl overflow-hidden bg-gradient-to-br from-teal-600 to-teal-800 h-72 md:h-96 flex items-center justify-center mb-8">
-              <FaHospital className="text-8xl text-white/30" />
+            {/* Hero image */}
+            <div className="relative rounded-2xl overflow-hidden h-72 md:h-96 mb-8">
+              <Image
+                src={service.image}
+                alt={service.title}
+                fill
+                className="object-cover"
+                priority
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
             </div>
 
             <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">

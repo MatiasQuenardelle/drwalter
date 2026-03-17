@@ -8,23 +8,24 @@ export interface Testimonial {
 
 export const testimonials: Testimonial[] = [
   {
-    name: "Flavia",
-    image: "/images/patients/flavia.png",
+    name: "Paciente Satisfecha",
+    image: "/images/patients/result-1.png",
     quote:
-      "El Dr. Pilchik me cambió la vida. Después de años luchando con mi peso, la manga gástrica fue la mejor decisión. Bajé 45 kilos y me siento increíble. El seguimiento post-operatorio fue excelente.",
+      "El Dr. Pilchik me cambió la vida. Después de años luchando con mi peso, la manga gástrica fue la mejor decisión. Me siento increíble y con una energía que no tenía hace años.",
     rating: 5,
     procedure: "Manga Gástrica",
   },
   {
-    name: "Priscila",
-    image: "/images/patients/priscila.png",
+    name: "Paciente Satisfecha",
+    image: "/images/patients/result-2.png",
     quote:
       "Estoy eternamente agradecida con el Dr. Pilchik y todo su equipo. La cirugía fue un éxito total y la recuperación fue mucho más rápida de lo que esperaba. Hoy disfruto de una vida completamente nueva.",
     rating: 5,
     procedure: "Bypass Gástrico",
   },
   {
-    name: "Carolina M.",
+    name: "Paciente Satisfecha",
+    image: "/images/patients/result-3.png",
     quote:
       "Tenía mucho miedo antes de la cirugía, pero el Dr. Pilchik me explicó todo con mucha paciencia y profesionalismo. El resultado superó todas mis expectativas. Lo recomiendo al 100%.",
     rating: 5,
