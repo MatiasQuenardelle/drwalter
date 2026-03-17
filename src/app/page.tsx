@@ -115,7 +115,7 @@ export default function Home() {
                 {/* Main doctor image */}
                 <div className="relative w-72 md:w-80 lg:w-[380px] xl:w-[440px] aspect-[3/4] rounded-3xl overflow-hidden shadow-2xl shadow-black/40">
                   <Image
-                    src="/images/doctor/conference.png"
+                    src="/images/doctor/drwalter.png"
                     alt="Dr. Walter Pilchik"
                     fill
                     className="object-cover"
@@ -167,52 +167,55 @@ export default function Home() {
       </section>
 
       {/* ===== HIGHLIGHTS ===== */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-6xl mx-auto px-4">
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <p className="text-sm font-semibold text-teal-600 uppercase tracking-widest mb-3">
+              Excelencia médica
+            </p>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 tracking-tight">
               ¿Por qué elegirnos?
             </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+            <p className="text-gray-500 max-w-2xl mx-auto leading-relaxed">
               Combinamos experiencia, tecnología de punta y un trato humano
               para acompañarte en cada paso de tu transformación.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               {
-                icon: <FaUserMd className="text-3xl text-teal-600" />,
+                icon: <FaUserMd className="text-2xl text-teal-600" />,
                 title: "Especialista Certificado",
                 desc: "Más de 20 años de experiencia en cirugía bariátrica y de la obesidad.",
               },
               {
-                icon: <MdScience className="text-3xl text-teal-600" />,
+                icon: <MdScience className="text-2xl text-teal-600" />,
                 title: "Técnica Laparoscópica",
                 desc: "Cirugía mínimamente invasiva para una recuperación más rápida y segura.",
               },
               {
-                icon: <MdPeople className="text-3xl text-teal-600" />,
+                icon: <MdPeople className="text-2xl text-teal-600" />,
                 title: "Equipo Multidisciplinario",
                 desc: "Nutricionistas, psicólogos y especialistas trabajando juntos por tu bienestar.",
               },
               {
-                icon: <MdHealthAndSafety className="text-3xl text-teal-600" />,
+                icon: <MdHealthAndSafety className="text-2xl text-teal-600" />,
                 title: "Seguimiento Integral",
                 desc: "Acompañamiento pre y post operatorio personalizado para cada paciente.",
               },
             ].map((item) => (
               <div
                 key={item.title}
-                className="bg-white rounded-2xl p-8 shadow-md hover:shadow-xl transition-shadow text-center"
+                className="group bg-gray-50 rounded-2xl p-8 border border-gray-100 hover:border-teal-200 hover:bg-teal-50/50 transition-all duration-300 text-center"
               >
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-teal-50 rounded-2xl mb-6">
+                <div className="inline-flex items-center justify-center w-14 h-14 bg-white rounded-xl mb-6 shadow-sm group-hover:shadow-md transition-shadow">
                   {item.icon}
                 </div>
-                <h3 className="text-lg font-bold text-gray-900 mb-3">
+                <h3 className="text-base font-bold text-gray-900 mb-2">
                   {item.title}
                 </h3>
-                <p className="text-gray-600 text-sm leading-relaxed">
+                <p className="text-gray-500 text-sm leading-relaxed">
                   {item.desc}
                 </p>
               </div>
@@ -222,43 +225,47 @@ export default function Home() {
       </section>
 
       {/* ===== SERVICES ===== */}
-      <section id="servicios" className="py-20">
-        <div className="max-w-6xl mx-auto px-4">
+      <section id="servicios" className="py-24 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <p className="text-sm font-semibold text-teal-600 uppercase tracking-widest mb-3">
+              Procedimientos
+            </p>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 tracking-tight">
               Nuestros Servicios
             </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+            <p className="text-gray-500 max-w-2xl mx-auto leading-relaxed">
               Ofrecemos diferentes alternativas quirúrgicas y no quirúrgicas
               adaptadas a las necesidades de cada paciente.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {services.map((service) => (
               <Link
                 key={service.id}
                 href={`/servicios/${service.id}`}
-                className="group bg-white rounded-2xl shadow-md hover:shadow-xl transition-all overflow-hidden"
+                className="group bg-white rounded-2xl border border-gray-100 hover:border-gray-200 transition-all duration-300 overflow-hidden hover:shadow-lg"
               >
-                <div className="relative h-56 overflow-hidden">
+                <div className="relative h-52 overflow-hidden">
                   <Image
                     src={service.image}
                     alt={service.title}
                     fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="object-cover group-hover:scale-105 transition-transform duration-700"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent" />
                 </div>
-                <div className="p-8">
-                  <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-teal-700 transition-colors">
+                <div className="p-7">
+                  <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-teal-700 transition-colors">
                     {service.title}
                   </h3>
-                  <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                  <p className="text-gray-500 text-sm leading-relaxed mb-4">
                     {service.shortDescription}
                   </p>
-                  <span className="inline-flex items-center text-teal-600 text-sm font-semibold group-hover:gap-2 transition-all">
-                    Ver más detalles →
+                  <span className="inline-flex items-center gap-1 text-teal-600 text-sm font-semibold group-hover:gap-2 transition-all">
+                    Más información
+                    <span className="text-xs">&#8594;</span>
                   </span>
                 </div>
               </Link>
@@ -268,15 +275,19 @@ export default function Home() {
       </section>
 
       {/* ===== FEATURE STRIP ===== */}
-      <section className="py-20 bg-gray-900 text-white">
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <section className="py-24 bg-gray-950 text-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,_rgba(20,184,166,0.08)_0%,_transparent_50%)]" />
+        <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">
+              <p className="text-sm font-semibold text-teal-400 uppercase tracking-widest mb-4">
+                Tecnología avanzada
+              </p>
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 tracking-tight">
                 Cirugía videolaparoscópica
                 <span className="text-teal-400"> de última generación</span>
               </h2>
-              <p className="text-gray-300 mb-8 leading-relaxed">
+              <p className="text-gray-400 mb-10 leading-relaxed">
                 Utilizamos las técnicas más avanzadas en cirugía mínimamente
                 invasiva, lo que permite incisiones más pequeñas, menos dolor
                 post-operatorio y una recuperación significativamente más rápida.
@@ -292,15 +303,15 @@ export default function Home() {
                 ].map((feature) => (
                   <li
                     key={feature}
-                    className="flex items-center gap-3 text-gray-200"
+                    className="flex items-center gap-3 text-gray-300"
                   >
-                    <FaCheckCircle className="text-teal-400 flex-shrink-0" />
-                    <span>{feature}</span>
+                    <FaCheckCircle className="text-teal-500 flex-shrink-0 text-sm" />
+                    <span className="text-sm">{feature}</span>
                   </li>
                 ))}
               </ul>
             </div>
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-2 gap-3">
               <div className="relative rounded-2xl overflow-hidden aspect-square">
                 <Image
                   src="/images/surgery/laparoscopic.png"
@@ -339,58 +350,62 @@ export default function Home() {
       </section>
 
       {/* ===== ABOUT ===== */}
-      <section id="sobre-mi" className="py-20">
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <section id="sobre-mi" className="py-24">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="relative">
-              <div className="rounded-2xl overflow-hidden aspect-[4/5] relative">
+              <div className="rounded-3xl overflow-hidden aspect-[4/5] relative shadow-xl">
                 <Image
-                  src="/images/doctor/conference.png"
+                  src="/images/doctor/drwalter.png"
                   alt="Dr. Walter Pilchik en congreso médico"
                   fill
                   className="object-cover"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
               </div>
-              <div className="absolute -bottom-6 -right-6 bg-teal-600 text-white rounded-2xl p-6 shadow-lg hidden md:block">
-                <div className="text-3xl font-bold">+20</div>
-                <div className="text-sm text-teal-100">Años de experiencia</div>
+              <div className="absolute -bottom-5 -right-5 bg-gray-900 text-white rounded-2xl p-5 shadow-xl hidden md:block">
+                <div className="text-2xl font-bold">+20</div>
+                <div className="text-xs text-gray-400 mt-0.5">Años de experiencia</div>
               </div>
             </div>
 
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+              <p className="text-sm font-semibold text-teal-600 uppercase tracking-widest mb-3">
+                Sobre el doctor
+              </p>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 tracking-tight">
                 Dr. Walter Rubén Pilchik
               </h2>
-              <div className="inline-flex items-center gap-2 bg-teal-50 text-teal-700 px-4 py-2 rounded-full text-sm font-medium mb-6">
-                <FaAward />
+              <div className="inline-flex items-center gap-2 bg-gray-100 text-gray-700 px-4 py-2 rounded-full text-sm font-medium mb-6">
+                <FaAward className="text-teal-600" />
                 EQQO — Equipo Quirúrgico
               </div>
-              <p className="text-gray-600 leading-relaxed mb-6">
+              <p className="text-gray-500 leading-relaxed mb-5">
                 El Dr. Walter Rubén Pilchik es un reconocido especialista en
                 cirugía de la obesidad y cirugía videolaparoscópica básica y
                 avanzada. Con más de dos décadas de trayectoria, ha dedicado su
                 carrera a transformar la vida de miles de pacientes que luchan
                 contra la obesidad y sus enfermedades asociadas.
               </p>
-              <p className="text-gray-600 leading-relaxed mb-6">
+              <p className="text-gray-500 leading-relaxed mb-8">
                 Su enfoque combina la excelencia quirúrgica con un trato humano
                 y personalizado, entendiendo que cada paciente es único y merece
                 una atención integral. Trabaja junto a un equipo
                 multidisciplinario de nutricionistas, psicólogos y
                 especialistas para garantizar los mejores resultados.
               </p>
-              <div className="grid grid-cols-2 gap-4 mb-8">
+              <div className="grid grid-cols-2 gap-3 mb-8">
                 {[
                   { label: "Cirugías Bariátricas", value: "+2000" },
                   { label: "Pacientes Atendidos", value: "+5000" },
                   { label: "Años de Experiencia", value: "+20" },
                   { label: "Tasa de Éxito", value: "98%" },
                 ].map((stat) => (
-                  <div key={stat.label} className="bg-gray-50 rounded-xl p-4">
-                    <div className="text-xl font-bold text-teal-700">
+                  <div key={stat.label} className="bg-gray-50 border border-gray-100 rounded-xl p-4">
+                    <div className="text-lg font-bold text-gray-900">
                       {stat.value}
                     </div>
-                    <div className="text-sm text-gray-500">{stat.label}</div>
+                    <div className="text-xs text-gray-400 mt-0.5">{stat.label}</div>
                   </div>
                 ))}
               </div>
@@ -398,9 +413,9 @@ export default function Home() {
                 href={siteConfig.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-teal-600 hover:text-teal-700 font-semibold transition-colors"
+                className="inline-flex items-center gap-2 text-gray-600 hover:text-gray-900 font-medium transition-colors text-sm"
               >
-                <FaInstagram className="text-xl" />
+                <FaInstagram className="text-lg" />
                 Seguir en Instagram
               </a>
             </div>
@@ -409,19 +424,22 @@ export default function Home() {
       </section>
 
       {/* ===== PATIENT GALLERY ===== */}
-      <section className="py-20 bg-white">
-        <div className="max-w-6xl mx-auto px-4">
+      <section className="py-24 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <p className="text-sm font-semibold text-teal-600 uppercase tracking-widest mb-3">
+              Resultados reales
+            </p>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 tracking-tight">
               Nuestros Pacientes
             </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+            <p className="text-gray-500 max-w-2xl mx-auto leading-relaxed">
               Cada imagen cuenta una historia de transformación, salud y una
               nueva vida.
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
             {[
               { src: "/images/patients/patient-with-doctor-1.png", alt: "Dr. Pilchik con paciente" },
               { src: "/images/patients/result-1.png", alt: "Resultado de paciente" },
@@ -434,15 +452,15 @@ export default function Home() {
             ].map((img, idx) => (
               <div
                 key={idx}
-                className="relative aspect-[3/4] rounded-2xl overflow-hidden group"
+                className="relative aspect-[3/4] rounded-xl overflow-hidden group"
               >
                 <Image
                   src={img.src}
                   alt={img.alt}
                   fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="object-cover group-hover:scale-105 transition-transform duration-700"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
             ))}
           </div>
@@ -450,35 +468,38 @@ export default function Home() {
       </section>
 
       {/* ===== TESTIMONIALS ===== */}
-      <section id="testimonios" className="py-20 bg-gray-50">
-        <div className="max-w-6xl mx-auto px-4">
+      <section id="testimonios" className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <p className="text-sm font-semibold text-teal-600 uppercase tracking-widest mb-3">
+              Testimonios
+            </p>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 tracking-tight">
               Lo que dicen nuestros pacientes
             </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+            <p className="text-gray-500 max-w-2xl mx-auto leading-relaxed">
               Historias reales de personas que transformaron su vida con la ayuda
               del Dr. Pilchik.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {testimonials.map((testimonial, idx) => (
               <div
                 key={idx}
-                className="bg-white rounded-2xl p-8 shadow-md hover:shadow-xl transition-shadow"
+                className="bg-gray-50 rounded-2xl p-7 border border-gray-100 hover:border-gray-200 transition-all duration-300"
               >
-                <div className="flex gap-1 mb-4">
+                <div className="flex gap-0.5 mb-4">
                   {Array.from({ length: testimonial.rating }).map((_, i) => (
-                    <FaStar key={i} className="text-yellow-400" />
+                    <FaStar key={i} className="text-amber-400 text-sm" />
                   ))}
                 </div>
-                <p className="text-gray-600 text-sm leading-relaxed mb-6 italic">
+                <p className="text-gray-600 text-sm leading-relaxed mb-6">
                   &ldquo;{testimonial.quote}&rdquo;
                 </p>
-                <div className="flex items-center gap-3">
+                <div className="flex items-center gap-3 pt-4 border-t border-gray-100">
                   {testimonial.image ? (
-                    <div className="relative w-12 h-12 rounded-full overflow-hidden flex-shrink-0">
+                    <div className="relative w-10 h-10 rounded-full overflow-hidden flex-shrink-0">
                       <Image
                         src={testimonial.image}
                         alt={testimonial.name}
@@ -487,15 +508,15 @@ export default function Home() {
                       />
                     </div>
                   ) : (
-                    <div className="w-12 h-12 rounded-full bg-teal-100 flex items-center justify-center text-teal-700 font-bold text-lg flex-shrink-0">
+                    <div className="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center text-gray-600 font-bold text-sm flex-shrink-0">
                       {testimonial.name[0]}
                     </div>
                   )}
                   <div>
-                    <div className="font-semibold text-gray-900">
+                    <div className="font-semibold text-gray-900 text-sm">
                       {testimonial.name}
                     </div>
-                    <div className="text-sm text-gray-500">
+                    <div className="text-xs text-gray-400">
                       {testimonial.procedure}
                     </div>
                   </div>
@@ -507,15 +528,18 @@ export default function Home() {
       </section>
 
       {/* ===== MAP ===== */}
-      <section className="py-20">
-        <div className="max-w-6xl mx-auto px-4">
+      <section className="py-24 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <p className="text-sm font-semibold text-teal-600 uppercase tracking-widest mb-3">
+              Consultorio
+            </p>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 tracking-tight">
               Ubicación
             </h2>
-            <p className="text-gray-600">Buenos Aires, Argentina</p>
+            <p className="text-gray-500">Buenos Aires, Argentina</p>
           </div>
-          <div className="rounded-2xl overflow-hidden shadow-lg h-96">
+          <div className="rounded-2xl overflow-hidden border border-gray-200 h-96">
             <iframe
               src={siteConfig.mapEmbedUrl}
               width="100%"
@@ -531,32 +555,35 @@ export default function Home() {
       </section>
 
       {/* ===== CONTACT / BOOKING ===== */}
-      <section id="contacto" className="py-20 bg-gray-50">
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <section id="contacto" className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              <p className="text-sm font-semibold text-teal-600 uppercase tracking-widest mb-3">
+                Contacto
+              </p>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 tracking-tight">
                 Reservá tu turno
               </h2>
-              <p className="text-gray-600 mb-8 leading-relaxed">
+              <p className="text-gray-500 mb-10 leading-relaxed">
                 Completá el formulario y nos comunicaremos con vos a la brevedad
                 para coordinar tu consulta. También podés contactarnos
                 directamente por WhatsApp.
               </p>
 
-              <div className="space-y-4">
+              <div className="space-y-3">
                 <a
                   href={`https://wa.me/${siteConfig.whatsapp}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-4 bg-green-50 hover:bg-green-100 p-4 rounded-xl transition-colors"
+                  className="flex items-center gap-4 bg-gray-50 hover:bg-gray-100 p-4 rounded-xl transition-colors border border-gray-100"
                 >
-                  <div className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center text-white">
-                    <FaWhatsapp className="text-xl" />
+                  <div className="w-11 h-11 bg-green-500 rounded-xl flex items-center justify-center text-white">
+                    <FaWhatsapp className="text-lg" />
                   </div>
                   <div>
-                    <div className="font-semibold text-gray-900">WhatsApp</div>
-                    <div className="text-sm text-gray-500">
+                    <div className="font-semibold text-gray-900 text-sm">WhatsApp</div>
+                    <div className="text-xs text-gray-400">
                       Respuesta inmediata
                     </div>
                   </div>
@@ -564,14 +591,14 @@ export default function Home() {
 
                 <a
                   href={`tel:${siteConfig.phone}`}
-                  className="flex items-center gap-4 bg-teal-50 hover:bg-teal-100 p-4 rounded-xl transition-colors"
+                  className="flex items-center gap-4 bg-gray-50 hover:bg-gray-100 p-4 rounded-xl transition-colors border border-gray-100"
                 >
-                  <div className="w-12 h-12 bg-teal-600 rounded-full flex items-center justify-center text-white">
-                    <FaPhone className="text-xl" />
+                  <div className="w-11 h-11 bg-gray-900 rounded-xl flex items-center justify-center text-white">
+                    <FaPhone className="text-sm" />
                   </div>
                   <div>
-                    <div className="font-semibold text-gray-900">Teléfono</div>
-                    <div className="text-sm text-gray-500">
+                    <div className="font-semibold text-gray-900 text-sm">Teléfono</div>
+                    <div className="text-xs text-gray-400">
                       Lunes a Viernes 9:00 - 18:00
                     </div>
                   </div>
@@ -581,14 +608,14 @@ export default function Home() {
                   href={siteConfig.instagram}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-4 bg-purple-50 hover:bg-purple-100 p-4 rounded-xl transition-colors"
+                  className="flex items-center gap-4 bg-gray-50 hover:bg-gray-100 p-4 rounded-xl transition-colors border border-gray-100"
                 >
-                  <div className="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center text-white">
-                    <FaInstagram className="text-xl" />
+                  <div className="w-11 h-11 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center text-white">
+                    <FaInstagram className="text-lg" />
                   </div>
                   <div>
-                    <div className="font-semibold text-gray-900">Instagram</div>
-                    <div className="text-sm text-gray-500">
+                    <div className="font-semibold text-gray-900 text-sm">Instagram</div>
+                    <div className="text-xs text-gray-400">
                       @dr.walterrpilchik
                     </div>
                   </div>
@@ -596,7 +623,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="bg-white rounded-2xl p-8 shadow-md">
+            <div className="bg-gray-50 rounded-2xl p-8 border border-gray-100">
               <ContactForm />
             </div>
           </div>
@@ -604,19 +631,23 @@ export default function Home() {
       </section>
 
       {/* ===== CTA ===== */}
-      <section className="relative py-20 text-white text-center overflow-hidden">
+      <section className="relative py-28 text-white text-center overflow-hidden">
         <Image
           src="/images/patients/patient-with-doctor-3.png"
           alt="Dr. Pilchik con paciente"
           fill
           className="object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-teal-800/90 to-teal-900/90" />
-        <div className="relative z-10 max-w-3xl mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+        <div className="absolute inset-0 bg-gray-950/85" />
+        <div className="absolute inset-0 bg-gradient-to-r from-teal-900/30 to-transparent" />
+        <div className="relative z-10 max-w-2xl mx-auto px-6">
+          <p className="text-sm font-semibold text-teal-400 uppercase tracking-widest mb-4">
+            Comenzá hoy
+          </p>
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 tracking-tight">
             Dá el primer paso hacia una vida más saludable
           </h2>
-          <p className="text-teal-100 text-lg mb-10 leading-relaxed">
+          <p className="text-gray-400 text-base mb-10 leading-relaxed">
             No esperes más. Agendá una consulta con el Dr. Pilchik y descubrí
             cómo la cirugía bariátrica puede transformar tu vida.
           </p>
@@ -624,9 +655,9 @@ export default function Home() {
             href={`https://wa.me/${siteConfig.whatsapp}?text=${encodeURIComponent("Hola Dr. Pilchik, me gustaría agendar una consulta.")}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 bg-white text-teal-800 px-10 py-4 rounded-full text-lg font-bold hover:bg-teal-50 transition-all hover:scale-105 shadow-lg"
+            className="group inline-flex items-center justify-center gap-2.5 bg-teal-500 text-white px-10 py-4 rounded-full text-base font-semibold hover:bg-teal-400 transition-all duration-300 hover:shadow-[0_0_30px_rgba(20,184,166,0.3)] hover:scale-[1.02]"
           >
-            <FaWhatsapp className="text-2xl text-green-600" />
+            <FaWhatsapp className="text-xl group-hover:scale-110 transition-transform" />
             Agendar Consulta
           </a>
         </div>
@@ -643,15 +674,15 @@ function ContactForm() {
       target="_blank"
       className="space-y-5"
     >
-      <h3 className="text-xl font-bold text-gray-900 mb-2">
+      <h3 className="text-lg font-bold text-gray-900 mb-1">
         Envianos un mensaje
       </h3>
-      <p className="text-sm text-gray-500 mb-4">
+      <p className="text-xs text-gray-400 mb-4">
         Completá tus datos y te contactamos por WhatsApp.
       </p>
 
       <div>
-        <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+        <label htmlFor="name" className="block text-xs font-medium text-gray-500 mb-1.5">
           Nombre completo
         </label>
         <input
@@ -659,33 +690,33 @@ function ContactForm() {
           id="name"
           name="name"
           required
-          className="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm focus:ring-2 focus:ring-teal-500 focus:border-teal-500 outline-none transition-colors"
+          className="w-full bg-white border border-gray-200 rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-teal-500/20 focus:border-teal-500 outline-none transition-all"
           placeholder="Tu nombre"
         />
       </div>
 
       <div>
-        <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
+        <label htmlFor="phone" className="block text-xs font-medium text-gray-500 mb-1.5">
           Teléfono
         </label>
         <input
           type="tel"
           id="phone"
           name="phone"
-          className="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm focus:ring-2 focus:ring-teal-500 focus:border-teal-500 outline-none transition-colors"
+          className="w-full bg-white border border-gray-200 rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-teal-500/20 focus:border-teal-500 outline-none transition-all"
           placeholder="Tu número de teléfono"
         />
       </div>
 
       <div>
-        <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
+        <label htmlFor="message" className="block text-xs font-medium text-gray-500 mb-1.5">
           Mensaje
         </label>
         <textarea
           id="message"
           name="text"
           rows={4}
-          className="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm focus:ring-2 focus:ring-teal-500 focus:border-teal-500 outline-none transition-colors resize-none"
+          className="w-full bg-white border border-gray-200 rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-teal-500/20 focus:border-teal-500 outline-none transition-all resize-none"
           placeholder="Contanos en qué podemos ayudarte..."
           defaultValue="Hola Dr. Pilchik, me gustaría solicitar un turno."
         />
@@ -693,9 +724,9 @@ function ContactForm() {
 
       <button
         type="submit"
-        className="w-full bg-teal-600 text-white py-3 rounded-lg font-semibold hover:bg-teal-700 transition-colors flex items-center justify-center gap-2"
+        className="w-full bg-gray-900 text-white py-3.5 rounded-xl font-semibold hover:bg-gray-800 transition-colors flex items-center justify-center gap-2 text-sm"
       >
-        <FaWhatsapp className="text-lg" />
+        <FaWhatsapp className="text-base" />
         Enviar por WhatsApp
       </button>
     </form>
