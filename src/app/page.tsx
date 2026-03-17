@@ -118,7 +118,7 @@ export default function Home() {
                     src="/images/doctor/drwalter2.png"
                     alt="Dr. Walter Pilchik"
                     fill
-                    className="object-cover"
+                    className="object-cover object-top"
                     priority
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-gray-950/60 via-transparent to-transparent" />
@@ -359,7 +359,7 @@ export default function Home() {
                   src="/images/doctor/drwalter2.png"
                   alt="Dr. Walter Pilchik en congreso médico"
                   fill
-                  className="object-cover"
+                  className="object-cover object-top"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
               </div>
