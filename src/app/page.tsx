@@ -115,7 +115,7 @@ export default function Home() {
                 {/* Main doctor image */}
                 <div className="relative w-72 md:w-80 lg:w-[380px] xl:w-[440px] aspect-[3/4] rounded-3xl overflow-hidden shadow-2xl shadow-black/40">
                   <Image
-                    src="/images/doctor/drwalter.png"
+                    src="/images/doctor/drwalter2.png"
                     alt="Dr. Walter Pilchik"
                     fill
                     className="object-cover"
@@ -356,7 +356,7 @@ export default function Home() {
             <div className="relative">
               <div className="rounded-3xl overflow-hidden aspect-[4/5] relative shadow-xl">
                 <Image
-                  src="/images/doctor/drwalter.png"
+                  src="/images/doctor/drwalter2.png"
                   alt="Dr. Walter Pilchik en congreso médico"
                   fill
                   className="object-cover"
