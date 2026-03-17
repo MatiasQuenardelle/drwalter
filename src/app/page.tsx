@@ -25,72 +25,143 @@ export default function Home() {
       {/* ===== HERO ===== */}
       <section
         id="inicio"
-        className="relative min-h-screen flex items-center justify-center overflow-hidden"
+        className="relative min-h-screen flex items-center overflow-hidden bg-gray-950"
       >
-        {/* Background image */}
-        <Image
-          src="/images/surgery/laparoscopic.png"
-          alt="Cirugía laparoscópica"
-          fill
-          className="object-cover"
-          priority
-        />
-        <div className="absolute inset-0 bg-gradient-to-br from-teal-900/90 via-teal-800/85 to-teal-950/90" />
+        {/* Layered background */}
+        <div className="absolute inset-0">
+          <Image
+            src="/images/surgery/laparoscopic.png"
+            alt="Cirugía laparoscópica"
+            fill
+            className="object-cover opacity-20"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-gray-950 via-gray-950/95 to-gray-950/60" />
+          <div className="absolute inset-0 bg-gradient-to-t from-gray-950 via-transparent to-gray-950/80" />
+        </div>
 
-        <div className="relative z-10 max-w-6xl mx-auto px-4 py-32 text-center">
-          <div className="mb-6 inline-flex items-center gap-2 bg-teal-700/50 text-teal-100 px-4 py-2 rounded-full text-sm">
-            <FaUserMd />
-            <span>Especialista en Cirugía Bariátrica</span>
-          </div>
+        {/* Subtle decorative elements */}
+        <div className="absolute top-0 right-0 w-1/2 h-full opacity-[0.03]">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,_rgba(20,184,166,0.4)_0%,_transparent_60%)]" />
+        </div>
+        <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-teal-500/20 to-transparent" />
 
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
-            Transformá tu vida
-            <br />
-            <span className="text-teal-300">con cirugía bariátrica</span>
-          </h1>
-
-          <p className="text-lg md:text-xl text-teal-100 max-w-2xl mx-auto mb-10 leading-relaxed">
-            Dr. Walter Rubén Pilchik — Más de 20 años de experiencia en cirugía
-            de la obesidad. Cirugía videolaparoscópica básica y avanzada con los
-            más altos estándares de seguridad y calidad.
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href={`https://wa.me/${siteConfig.whatsapp}?text=${encodeURIComponent("Hola Dr. Pilchik, me gustaría solicitar un turno para una consulta.")}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 bg-green-500 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-green-600 transition-all hover:scale-105 shadow-lg"
-            >
-              <FaWhatsapp className="text-xl" />
-              Reservar Turno
-            </a>
-            <a
-              href="#servicios"
-              className="inline-flex items-center justify-center gap-2 bg-white/10 backdrop-blur-sm text-white border border-white/20 px-8 py-4 rounded-full text-lg font-semibold hover:bg-white/20 transition-all"
-            >
-              Ver Servicios
-            </a>
-          </div>
-
-          {/* Stats bar */}
-          <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto">
-            {[
-              { number: "+20", label: "Años de experiencia" },
-              { number: "+2000", label: "Cirugías realizadas" },
-              { number: "98%", label: "Pacientes satisfechos" },
-              { number: "+1500", label: "Seguidores" },
-            ].map((stat) => (
-              <div
-                key={stat.label}
-                className="bg-white/10 backdrop-blur-sm rounded-2xl p-4"
-              >
-                <div className="text-2xl md:text-3xl font-bold text-teal-300">
-                  {stat.number}
-                </div>
-                <div className="text-sm text-teal-100 mt-1">{stat.label}</div>
+        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 py-32 lg:py-0 w-full">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center min-h-screen lg:py-24">
+            {/* Left column — text */}
+            <div className="order-2 lg:order-1">
+              <div className="animate-fade-up mb-8 inline-flex items-center gap-2.5 bg-teal-500/10 text-teal-400 pl-1.5 pr-4 py-1.5 rounded-full text-sm font-medium border border-teal-500/20">
+                <span className="bg-teal-500 text-white rounded-full p-1.5">
+                  <FaUserMd className="text-xs" />
+                </span>
+                <span>Cirugía Bariátrica y de la Obesidad</span>
               </div>
-            ))}
+
+              <h1 className="animate-fade-up-delay-1 text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-6 leading-[1.1] tracking-tight">
+                Transformá
+                <br />
+                tu vida
+                <span className="block mt-2 bg-gradient-to-r from-teal-400 to-emerald-400 bg-clip-text text-transparent">
+                  con confianza
+                </span>
+              </h1>
+
+              <p className="animate-fade-up-delay-2 text-base md:text-lg text-gray-400 max-w-lg mb-10 leading-relaxed">
+                Dr. Walter Rubén Pilchik — Más de 20 años de experiencia
+                y más de 2.000 cirugías realizadas con los más altos estándares
+                de seguridad y calidad en cirugía videolaparoscópica.
+              </p>
+
+              <div className="animate-fade-up-delay-3 flex flex-col sm:flex-row gap-4">
+                <a
+                  href={`https://wa.me/${siteConfig.whatsapp}?text=${encodeURIComponent("Hola Dr. Pilchik, me gustaría solicitar un turno para una consulta.")}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group inline-flex items-center justify-center gap-2.5 bg-teal-500 text-white px-8 py-4 rounded-full text-base font-semibold hover:bg-teal-400 transition-all duration-300 hover:shadow-[0_0_30px_rgba(20,184,166,0.3)] hover:scale-[1.02]"
+                >
+                  <FaWhatsapp className="text-xl group-hover:scale-110 transition-transform" />
+                  Reservar Turno
+                </a>
+                <a
+                  href="#servicios"
+                  className="inline-flex items-center justify-center gap-2 text-gray-300 border border-gray-700 px-8 py-4 rounded-full text-base font-semibold hover:border-gray-500 hover:text-white transition-all duration-300"
+                >
+                  Ver Servicios
+                </a>
+              </div>
+
+              {/* Compact stats */}
+              <div className="animate-fade-up-delay-3 mt-14 flex flex-wrap gap-x-10 gap-y-4">
+                {[
+                  { number: "+20", label: "Años experiencia" },
+                  { number: "+2000", label: "Cirugías" },
+                  { number: "98%", label: "Satisfacción" },
+                ].map((stat) => (
+                  <div key={stat.label} className="flex items-baseline gap-2">
+                    <span className="text-2xl md:text-3xl font-bold text-white">
+                      {stat.number}
+                    </span>
+                    <span className="text-sm text-gray-500 uppercase tracking-wider">
+                      {stat.label}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Right column — image composition */}
+            <div className="order-1 lg:order-2 flex justify-center lg:justify-end">
+              <div className="relative animate-scale-in">
+                {/* Main doctor image */}
+                <div className="relative w-72 md:w-80 lg:w-[380px] xl:w-[440px] aspect-[3/4] rounded-3xl overflow-hidden shadow-2xl shadow-black/40">
+                  <Image
+                    src="/images/doctor/conference.png"
+                    alt="Dr. Walter Pilchik"
+                    fill
+                    className="object-cover"
+                    priority
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-gray-950/60 via-transparent to-transparent" />
+                </div>
+
+                {/* Floating card — experience */}
+                <div className="absolute -left-4 md:-left-8 bottom-20 bg-white/10 backdrop-blur-xl border border-white/10 rounded-2xl p-4 shadow-lg animate-fade-up-delay-3">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-xl bg-teal-500/20 flex items-center justify-center">
+                      <FaAward className="text-teal-400" />
+                    </div>
+                    <div>
+                      <div className="text-white font-bold text-sm">+20 Años</div>
+                      <div className="text-gray-400 text-xs">de Experiencia</div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Floating card — satisfaction */}
+                <div className="absolute -right-4 md:-right-8 top-20 bg-white/10 backdrop-blur-xl border border-white/10 rounded-2xl p-4 shadow-lg animate-fade-up-delay-2">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-xl bg-emerald-500/20 flex items-center justify-center">
+                      <FaHeartbeat className="text-emerald-400" />
+                    </div>
+                    <div>
+                      <div className="text-white font-bold text-sm">98%</div>
+                      <div className="text-gray-400 text-xs">Satisfacción</div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Decorative ring */}
+                <div className="absolute -inset-4 rounded-[2rem] border border-teal-500/10 -z-10" />
+                <div className="absolute -inset-8 rounded-[2.5rem] border border-teal-500/5 -z-10" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Scroll indicator */}
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-fade-in">
+          <div className="w-6 h-10 rounded-full border-2 border-gray-600 flex items-start justify-center p-1.5">
+            <div className="w-1 h-2.5 bg-gray-500 rounded-full animate-bounce" />
           </div>
         </div>
       </section>
